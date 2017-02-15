@@ -46,32 +46,10 @@
 
 代码分析
 --------------------
-.. literalinclude:: /code/Adapter/main.cpp
-   :language: cpp
-   :linenos:
-   :emphasize-lines: 10-12
-
-.. literalinclude:: /code/Adapter/Adapter.h
-   :language: cpp
-   :linenos:
-
-.. literalinclude:: /code/Adapter/Adapter.cpp
-   :language: cpp
-   :linenos:
-   :emphasize-lines: 19
-   
-
-.. literalinclude:: /code/Adapter/Adaptee.h
-   :language: cpp
-   :linenos:
-
-.. literalinclude:: /code/Adapter/Adapte.cpp
-   :language: cpp
-   :linenos:
-
-运行结果：
-
-.. image:: /_static/Adapter_run.jpg
+::
+public interface Target {
+    void request();
+}
 
 模式分析
 --------------------
