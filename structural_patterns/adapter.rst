@@ -46,9 +46,11 @@
 
 代码分析
 --------------------
+{code}
 public interface Target {
     void request();
 }
+{code}
 
 实例
 --------------------
