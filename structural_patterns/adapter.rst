@@ -46,7 +46,7 @@
 
 代码分析
 --------------------
-.. parsed-literal::
+.. unicode::
 public interface Target {
     void request();
 }
