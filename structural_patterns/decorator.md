@@ -33,35 +33,7 @@
 
 时序图
 --------------------
-.. image:: /_static/seq_Decorator.jpg
-
-代码分析
---------------------
-.. literalinclude:: /code/Decorator/main.cpp
-    :language: cpp
-    :linenos:
-    :lines: 1-
-    :emphasize-lines: 10-16
-
-.. literalinclude:: /code/Decorator/ConcreteComponent.cpp
-   :language: cpp
-   :linenos:
-   :lines: 1-
-
-.. literalinclude:: /code/Decorator/ConcreteDecoratorA.h
-   :language: cpp
-   :linenos:
-   :lines: 1-
-
-.. literalinclude:: /code/Decorator/ConcreteDecoratorA.cpp
-   :language: cpp
-   :linenos:
-   :lines: 1-
-   :emphasize-lines: 22-30
-
-运行结果：
-
-.. image:: /_static/Decorator_run.jpg
+![时序图](/_static/seq_Decorator.jpg)
 
 模式分析
 --------------------
@@ -69,21 +41,22 @@
 - 使用装饰模式来实现扩展比继承更加灵活，它以对客户透明的方式动态地给一个对象附加更多的责任。装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展。
 
 
-
 典型案例
 --------------------
-实例：JAVA IO库
+# 实例：JAVA IO库
 
 Java IO库的设计就是Decorator模式的典范。在IO处理中，Java将数据抽象为流（Stream）。在IO库中，最基本的是InputStream和OutputStream两个分别处理输出和输入的对象（为了叙述简便起见，这儿只涉及字节流，字符流和其完全相似），但是在InputStream和OutputStream中只提供了最简单的流处理方法，只能读入/写出字符，没有缓冲处理，无法处理文件，等等。它们只是提供了最纯粹的抽象，最简单的功能。
 
-.. image:: /_static/Decorator_eg.jpg
+![案例图](/_static/Decorator_eg.jpg)
 
-首先来看一段用来创建IO流的代码，以下是代码片段：
-try {
+<p>首先来看一段用来创建IO流的代码，以下是代码片段：<p>
+<pre><code>try {
     DataOutputStream out = new DataOutputStream(new FileOutputStream("test.txt"));
 } catch (FileNotFoundException e) {
     e.printStackTrace();
 }
+</code></pre>
+
 这段代码对于使用过JAVA输入输出流的人来说再熟悉不过了，我们使用DataOutputStream封装了一个FileOutputStream。这是一个典型的Decorator模式的使用，FileOutputStream相当于Component，DataOutputStream就是一个Decorator。由于FileOutputStream和DataOutputStream有公共的父类OutputStream，因此对对象的装饰对于用户来说几乎是透明的。
 　　下面就来看看OutputStream及其子类是如何构成Decorator模式的。
 　　Component角色：OutputStream
