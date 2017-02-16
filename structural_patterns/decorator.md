@@ -1,9 +1,7 @@
-.. _decorator:
 
-装饰模式
+
+ 装饰模式
 ====================
-
-.. contents:: 目录
 
 模式动机
 --------------------
@@ -30,7 +28,7 @@
 - ConcreteDecorator: 具体装饰类
 
 
-.. image:: /_static/Decorator.jpg
+![UML 模型图](/_static/Decorator.jpg)
 
 
 时序图
