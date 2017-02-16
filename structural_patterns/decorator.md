@@ -43,7 +43,7 @@
 
 典型案例
 --------------------
-*实例：JAVA IO库*
+实例：JAVA IO库
 
 <p>Java IO库的设计就是Decorator模式的典范。在IO处理中，Java将数据抽象为流（Stream）。在IO库中，最基本的是InputStream和OutputStream两个分别处理输出和输入的对象（为了叙述简便起见，这儿只涉及字节流，字符流和其完全相似），但是在InputStream和OutputStream中只提供了最简单的流处理方法，只能读入/写出字符，没有缓冲处理，无法处理文件，等等。它们只是提供了最纯粹的抽象，最简单的功能。
 
@@ -151,11 +151,6 @@ class SkipSpaceOutputStream extends FilterOutputStream {
     }
 }
 
-/**
- * Test the SkipSpaceOutputStream.
- *
- * @author
- */
 public class SkipSpaceTest {
 
     public static void main(String[] args) {
@@ -173,9 +168,10 @@ public class SkipSpaceTest {
         }
     }
 }</code></pre>
+
 <p>它从FilterOutputStream继承，并且重写了它的write(int b)方法。在write(int b)方法中首先对输入字符进行了检查，如果不是空格，则输出。输出结果：
-Please input your words: Jack Zhou
-JackZhou
+<code><pre>Please input your words: Jack Zhou
+JackZhou</code></pre>
 
 优点
 --------------------
