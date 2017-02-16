@@ -45,7 +45,7 @@
 --------------------
 *实例：JAVA IO库*
 
-- Java IO库的设计就是Decorator模式的典范。在IO处理中，Java将数据抽象为流（Stream）。在IO库中，最基本的是InputStream和OutputStream两个分别处理输出和输入的对象（为了叙述简便起见，这儿只涉及字节流，字符流和其完全相似），但是在InputStream和OutputStream中只提供了最简单的流处理方法，只能读入/写出字符，没有缓冲处理，无法处理文件，等等。它们只是提供了最纯粹的抽象，最简单的功能。
+<p>Java IO库的设计就是Decorator模式的典范。在IO处理中，Java将数据抽象为流（Stream）。在IO库中，最基本的是InputStream和OutputStream两个分别处理输出和输入的对象（为了叙述简便起见，这儿只涉及字节流，字符流和其完全相似），但是在InputStream和OutputStream中只提供了最简单的流处理方法，只能读入/写出字符，没有缓冲处理，无法处理文件，等等。它们只是提供了最纯粹的抽象，最简单的功能。
 
 ![案例图](/_static/Decorator_eg.jpg)
 
@@ -63,7 +63,7 @@
 2. ConcreteComponent角色：ByteArrayOutputStream, FileOutputStream, PipedOutputStream, ObjectOutputStream
 3. Decorator角色：FilterOutputStream
 4. ConcreteDecorator角色：BufferedOutputStream, DataOutputStream, PrintStream
-<p>顶层的OutputStream是一个抽象类，它是所有输出流的公共父类，其源代码片段如下：</p>
+顶层的OutputStream是一个抽象类，它是所有输出流的公共父类，其源代码片段如下：
 
 <pre><code>public abstract class OutputStream implements Closeable, Flushable {
     public abstract void write(int b) throws IOException;
@@ -102,8 +102,8 @@
 
     //...
 }</code></pre>
-　<p>同样，它也是从OutputStream继承。但是，它的构造函数很特别，需要传递一个OutputStream的引用给它，并且它将保存对此对象的引用。而如果没有具体的OutputStream对象存在，我们将无法创建FilterOutputStream。由于out既可以是指向FilterOutputStream类型的引用，也可以是指向ByteArrayOutputStream等具体输出流类的引用，因此使用多层嵌套的方式，我们可以为ByteArrayOutputStream添加多种装饰。这个FilterOutputStream类相当于Decorator模式中的Decorator类，它的write(int b)方法只是将调用转发给了传入的流的write(int b)方法，而没有做更多的处理，因此它本质上没有对流进行装饰，所以继承它的子类必须覆盖此方法，以达到装饰的目的。
-　　BufferedOutputStream 和 DataOutputStream是FilterOutputStream的两个子类，它们相当于Decorator模式中的ConcreteDecorator，并对传入的输出流做了不同的装饰。以BufferedOutputStream类为例，以下是代码片段：</p>
+同样，它也是从OutputStream继承。但是，它的构造函数很特别，需要传递一个OutputStream的引用给它，并且它将保存对此对象的引用。而如果没有具体的OutputStream对象存在，我们将无法创建FilterOutputStream。由于out既可以是指向FilterOutputStream类型的引用，也可以是指向ByteArrayOutputStream等具体输出流类的引用，因此使用多层嵌套的方式，我们可以为ByteArrayOutputStream添加多种装饰。这个FilterOutputStream类相当于Decorator模式中的Decorator类，它的write(int b)方法只是将调用转发给了传入的流的write(int b)方法，而没有做更多的处理，因此它本质上没有对流进行装饰，所以继承它的子类必须覆盖此方法，以达到装饰的目的。
+BufferedOutputStream 和 DataOutputStream是FilterOutputStream的两个子类，它们相当于Decorator模式中的ConcreteDecorator，并对传入的输出流做了不同的装饰。以BufferedOutputStream类为例，以下是代码片段：</p>
 <pre><code>public class BufferedOutputStream extends FilterOutputStream {
     //...
 
