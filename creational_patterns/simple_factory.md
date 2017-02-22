@@ -33,7 +33,7 @@
 --------------------
 ## 使用反射实现扩展性
 - 使用静态方法实现简单工厂，当有新的类加入时，工厂类需要进行更新，违反了开闭原则（Open-Close Principle），可以利用反射解决。
-{code}public class ShapeFactory2 {
+<pre>{code}public class ShapeFactory2 {
 
           public static Shape newShape(String name) {
               Shape shape = null;
@@ -50,7 +50,7 @@
               return shape;
           }
       }
-      }{/code}
+      }{/code}</pre>
 
 - classloader.loadClass()与Class.forName()区别？
 
