@@ -27,7 +27,7 @@
 时序图
 --------------------
 
-![UML 模型图](/_static/seq_SimpleFactory.jpg.jpg)
+![UML 模型图](/_static/seq_SimpleFactory.jpg)
 
 简单模式进阶
 --------------------
