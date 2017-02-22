@@ -38,8 +38,6 @@
           public static Shape newShape(String name) {
               Shape shape = null;
               try {
-      //            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-      //            Class clazz = classLoader.loadClass(name);
                   Class clazz = Class.forName(name);
                   shape = (Shape) clazz.newInstance();
               } catch (ClassNotFoundException e) {
