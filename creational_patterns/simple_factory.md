@@ -50,8 +50,7 @@
               return shape;
           }
       }
-
-{/code}
+      }{/code}
 
 - classloader.loadClass()与Class.forName()区别？
 
