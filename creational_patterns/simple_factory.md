@@ -63,6 +63,6 @@
 --------------------
 1. JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间。
 
- <pre>   public final static DateFormat getDateInstance();
+ <pre>public final static DateFormat getDateInstance();
     public final static DateFormat getDateInstance(int style);
     public final static DateFormat getDateInstance(int style,Locale locale);</pre>
