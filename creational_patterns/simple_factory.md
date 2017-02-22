@@ -36,21 +36,10 @@
 <pre>{code}public class ShapeFactory2 {
 
           public static Shape newShape(String name) {
-              Shape shape = null;
-              try {
                   Class clazz = Class.forName(name);
-                  shape = (Shape) clazz.newInstance();
-              } catch (ClassNotFoundException e) {
-
-              } catch (IllegalAccessException e) {
-
-              } catch (InstantiationException e) {
-
-              }
-              return shape;
-          }
-      }
-      }{/code}</pre>
+                  Shape shape = (Shape) clazz.newInstance();
+                   return shape;
+          }}{/code}</pre>
 
 - classloader.loadClass()与Class.forName()区别？
 
