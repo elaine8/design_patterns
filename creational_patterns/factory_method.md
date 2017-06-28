@@ -22,7 +22,7 @@
 - Factory：抽象工厂
 - ConcreteFactory：具体工厂
 
-.. image:: /_static/FactoryMethod.jpg
+![UML 模型图](/_static/FactoryMethod.jpg)
 
 
 时序图
